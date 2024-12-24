@@ -72,11 +72,11 @@ def display_data_with_filter(df):
     filtered_df = df[df['Kabupaten'] == kabupaten_choice]
     
     if not filtered_df.empty:
-        st.write(f"Data Peserta dari Kabupaten {kabupaten_choice}:")
+        jumlah_data = filtered_df.shape[0]  # Menghitung jumlah data
+        st.write(f"Data Peserta dari Kabupaten {kabupaten_choice}: ({jumlah_data} data)")
         st.write(filtered_df)
     else:
         st.write("Tidak ada data untuk kabupaten yang dipilih.")
-
 # Judul Aplikasi Admin
 st.title("Admin Panel - BPPP TEGAL")
 
